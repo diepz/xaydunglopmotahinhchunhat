@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Bài tập hình chữ nhật</title>
+	<canvas id="myCanvas" width="1000px" height="500px" style="border: 1px solid #d3d3d3;"></canvas>
+
+	<script type="text/javascript">	
+		var enter = "<br>";
+		function myRectangle(x,y,length,width) {
+			this.x = x;
+			this.y = y;
+			this.length = length;
+			this.width = width;
+		//Diện tích 
+		this.getArea = getArea;
+		function getArea() {
+			return this.length * this.width;
+
+		}
+		//chu vi
+		this.getRadius = getRadius;
+		function getRadius() {
+			return (this.length * this.width)*2;
+		}
+	}
+		var myObj = new myRectangle(100,50,400,200);
+		function createMyRectangle() {
+			var c = document.getElementById("myCanvas").getContext("2d");
+			 c.fillRect(myObj.x,myObj.y,myObj.length, myObj.width );
+		}
+		var area = myObj.getArea();
+    var perimeter = myObj.getRadius();
+    document.write(enter +"Area: " + area + "<br/>" + "Perimeter: " + perimeter);
+    createMyRectangle();
+	</script>
+</canvas>
+</head>
+<body>
+
+</body>
+</html>
